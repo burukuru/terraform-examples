@@ -27,4 +27,8 @@ resource "aws_instance" "ec2" {
 
   instance_type = "t3.micro"
   ami           = each.value.image_id
+
+  tags = {
+    "Name" = each.key
+  }
 }
